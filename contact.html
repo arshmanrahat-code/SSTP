@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &amp; Registration | SHED Skills Training</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary": "#ffffff",
+            "secondary": "#ae3111",
+            "secondary-container": "#fd6945",
+            "inverse-primary": "#ffb3ad",
+            "on-background": "#171b2b",
+            "on-secondary-container": "#621100",
+            "background": "#faf8ff",
+            "tertiary": "#6e3900",
+            "on-secondary-fixed": "#3c0700",
+            "surface-container-highest": "#dee1f8",
+            "primary-container": "#b82025",
+            "surface-variant": "#dee1f8",
+            "secondary-fixed-dim": "#ffb4a2",
+            "tertiary-fixed-dim": "#ffb77d",
+            "primary-fixed": "#ffdad6",
+            "on-error": "#ffffff",
+            "on-surface": "#171b2b",
+            "tertiary-fixed": "#ffdcc3",
+            "on-tertiary-container": "#ffd0ad",
+            "outline-variant": "#e3beba",
+            "on-surface-variant": "#5b403e",
+            "on-primary-container": "#ffcec9",
+            "inverse-on-surface": "#eff0ff",
+            "primary-fixed-dim": "#ffb3ad",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed-variant": "#930012",
+            "surface-container": "#ebedff",
+            "on-primary-fixed": "#410004",
+            "tertiary-container": "#914d00",
+            "surface-container-low": "#f3f2ff",
+            "on-primary": "#ffffff",
+            "surface": "#faf8ff",
+            "on-error-container": "#93000a",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#b71f25",
+            "surface-container-high": "#e4e7fe",
+            "secondary-fixed": "#ffdad2",
+            "inverse-surface": "#2c3041",
+            "on-secondary-fixed-variant": "#8a1c00",
+            "on-tertiary-fixed": "#2f1500",
+            "outline": "#8f706d",
+            "surface-dim": "#d6d9ef",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "surface-bright": "#faf8ff",
+            "error": "#ba1a1a",
+            "primary": "#940012"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            margin: "1.5rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            gutter: "1.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem"
+          },
+          fontFamily: {
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-mobile": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            display: ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+            "title-md": ["18px", { lineHeight: "26px", fontWeight: "600" }],
+            "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", fontWeight: "600" }],
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "label-sm": ["11px", { lineHeight: "14px", fontWeight: "700" }],
+            "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+            "display-mobile": ["32px", { lineHeight: "40px", fontWeight: "800" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" },
+            ],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            display: ["48px", { lineHeight: "56px", fontWeight: "800" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col">
+
+  <!-- HEADER / NAVIGATION -->
+  <header class="bg-surface-container-lowest border-b border-outline-variant/30 sticky top-0 z-50 shadow-sm">
+    <div class="w-full max-w-7xl mx-auto px-6 md:px-8 py-3 flex items-center justify-between">
+
+      <a class="flex items-center gap-3" href="/">
+        <img
+          alt="SHED Skills Training Program official insignia logo"
+          class="h-10 md:h-11 w-auto object-contain"
+          src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"
+        />
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-8">
+        <a class="text-on-surface-variant hover:text-primary font-label-lg text-label-lg transition-colors" href="/">Home</a>
+        <a class="text-on-surface-variant hover:text-primary font-label-lg text-label-lg transition-colors" href="/about">About Us</a>
+        <a class="text-on-surface-variant hover:text-primary font-label-lg text-label-lg transition-colors" href="/courses">Courses &amp; Training</a>
+        <a class="text-primary border-b-2 border-primary font-label-lg text-label-lg pb-1" href="/contact">Contact &amp; Registration</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <span class="hidden lg:flex items-center gap-1.5 text-label-md font-label-md text-on-surface-variant">
+          <span class="material-symbols-outlined text-secondary" style="font-size: 18px;">support_agent</span>
+          Helpline: (555) 019-2834
+        </span>
+
+        <a class="inline-flex items-center justify-center bg-primary-container text-on-primary font-label-lg text-label-lg px-5 py-2.5 rounded-lg hover:bg-primary transition-colors shadow-sm active:scale-[0.98]" href="#registration-form">
+          Apply Now
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 w-full">
+
+    <!-- HERO SECTION -->
+    <section class="bg-surface-container-low border-b border-outline-variant/20 py-10 md:py-14">
+      <div class="max-w-7xl mx-auto px-6 md:px-8">
+
+        <nav class="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant mb-4">
+          <a class="hover:text-primary transition-colors" href="/">Home</a>
+          <span class="material-symbols-outlined text-outline" style="font-size: 14px;">chevron_right</span>
+          <span class="text-primary font-semibold">Contact &amp; Registration</span>
+        </nav>
+
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div class="max-w-3xl">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm bg-secondary-fixed text-on-secondary-fixed mb-3">
+              <span class="material-symbols-outlined" style="font-size: 14px;">how_to_reg</span>
+              Admissions Open 2025
+            </span>
+
+            <h1 class="text-headline-lg font-headline-lg text-on-surface tracking-tight text-primary">
+              Begin Your Journey — Student Registration &amp; Inquiries
+            </h1>
+
+            <p class="text-body-lg font-body-lg text-on-surface-variant mt-3">
+              Fill out the enrollment form below or reach out directly to our admissions office.
+            </p>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="bg-surface-container-lowest px-4 py-3 rounded-lg border border-outline-variant/30 flex items-center gap-3 shadow-sm">
+              <div class="w-10 h-10 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-secondary">
+                <span class="material-symbols-outlined" style="font-size: 22px;">verified_user</span>
+              </div>
+              <div>
+                <p class="text-label-sm font-label-sm text-on-surface-variant">Govt Recognized</p>
+                <p class="text-label-lg font-label-lg text-on-surface">Certified Curricula</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGISTRATION AND CONTACT SECTION -->
+    <section class="max-w-7xl mx-auto px-6 md:px-8 py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+        <!-- LEFT COLUMN: REGISTRATION FORM -->
+        <div class="lg:col-span-7 space-y-6" id="registration-form">
+
+          <div class="bg-surface-container-low border border-primary/20 rounded-xl p-4 flex items-start gap-3.5 shadow-sm">
+            <div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0 mt-0.5">
+              <span class="material-symbols-outlined" style="font-size: 18px;">check_circle</span>
+            </div>
+            <div>
+              <h4 class="text-label-lg font-label-lg text-primary font-bold">Registration Status Notice</h4>
+              <p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                Thank you! Your application has been received. Our admissions team will contact you within 2 business days.
+              </p>
+            </div>
+          </div>
+
+          <!-- APPLICATION FORM CARD -->
+          <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-6 md:p-8 shadow-sm">
+
+            <div class="flex items-center justify-between pb-6 border-b border-outline-variant/20 mb-6">
+              <div>
+                <h2 class="text-headline-md font-headline-md text-on-surface">Official Application Form</h2>
+                <p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+                  Please provide accurate personal and academic information for certification indexing.
+                </p>
+              </div>
+
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-on-surface-variant">
+                <span class="material-symbols-outlined text-secondary" style="font-size: 14px;">lock</span>
+                256-Bit SSL Secured
+              </span>
+            </div>
+
+            <form action="#" class="space-y-5" method="POST" onsubmit="event.preventDefault();">
+
+              <!-- FULL NAME -->
+              <div>
+                <label class="block text-label-md font-label-md text-on-surface mb-1.5" for="full_name">
+                  Full Name <span class="text-primary">*</span>
+                </label>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">person</span>
+                  </span>
+                  <input
+                    class="w-full pl-11 pr-4 py-2.5 bg-surface-container-lowest border border-outline-variant/60 rounded-lg text-on-surface text-body-md font-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
+                    id="full_name"
+                    name="full_name"
+                    placeholder="Muhammad Ali"
+                    required
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <!-- EMAIL AND PHONE -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+                <div>
+                  <label class="block text-label-md font-label-md text-on-surface mb-1.5" for="email">
+                    Email Address <span class="text-primary">*</span>
+                  </label>
+                  <div class="relative">
+                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant">
+                      <span class="material-symbols-outlined" style="font-size: 20px;">mail</span>
+                    </span>
+                    <input
+                      class="w-full pl-11 pr-4 py-2.5 bg-surface-container-lowest border border-outline-variant/60 rounded-lg text-on-surface text-body-md font-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
+                      id="email"
+                      name="email"
+                      placeholder="ali.applicant@gmail.com"
+                      required
+                      type="email"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-label-md font-label-md text-on-surface mb-1.5" for="phone">
+                    Phone Number / WhatsApp <span class="text-primary">*</span>
+                  </label>
+                  <div class="relative">
+                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant">
+                      <span class="material-symbols-outlined" style="font-size: 20px;">call</span>
+                    </span>
+                    <input
+                      class="w-full pl-11 pr-4 py-2.5 bg-surface-container-lowest border border-outline-variant/60 rounded-lg text-on-surface text-body-md font-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
+                      id="phone"
+                      name="phone"
+                      placeholder="+92 300 1234567"
+                      required
+                      type="tel"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- CNIC -->
+              <div>
+                <label class="block text-label-md font-label-md text-on-surface mb-1.5" for="cnic">
+                  CNIC / Identification Number <span class="text-primary">*</span>
+                </label>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">badge</span>
+                  </span>
+                  <input
+                    class="w-full pl-11 pr-4 py-2.5 bg-surface-container-lowest border border-outline-variant/60 rounded-lg text-on-surface text-body-md font-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
+                    id="cnic"
+                    name="cnic"
+                    placeholder="42101-1234567-1"
+                    required
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <!-- EDUCATION AND COURSE -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+                <div>
+                  <label class="block text-label-md font-label-md text-on-surface mb-1.5" for="education">
+                    Highest Education Level <span class="text-primary">*</span>
+                  </label>
+                  <select
+                    class="w-full px-4 py-2.5 bg-surface-container-lowest border border-outline-variant/60 rounded-lg text-on-surface text-body-md font-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
+                    id="education"
+                    name="education"
+                    required
+                  >
+                    <option disabled selected value="">Select educational attainment</option>
+                    <option value="Matriculation">Matriculation</option>
+                    <option value="Intermediate / FSc / FA">Intermediate / FSc / FA</option>
+                    <option value="Bachelor's">Bachelor's</option>
+                    <option value="Technical Certificate">Technical Certificate</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-label-md font-label-md text-on-surface mb-1.5" for="course">
+                    Preferred Course of Study <span class="text-primary">*</span>
+                  </label>
+                  <select
+                    class="w-full px-4 py-2.5 bg-surface-container-lowest border border-outline-variant/60 rounded-lg text-on-surface text-body-md font-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
+                    id="course"
+                    name="course"
+                    required
+                  >
+                    <option disabled selected value="">Select vocational track</option>
+                    <option value="Solar Installation &amp; Renewable Energy">Solar Installation &amp; Renewable Energy</option>
+                    <option value="Digital Skills &amp; Web Development">Digital Skills &amp; Web Development</option>
+                    <option value="HVAC &amp; Refrigeration Technology">HVAC &amp; Refrigeration Technology</option>
+                    <option value="Graphic Design &amp; Multimedia">Graphic Design &amp; Multimedia</option>
+                    <option value="Mobile Repair &amp; Micro-soldering">Mobile Repair &amp; Micro-soldering</option>
+                    <option value="Industrial Electrical Wiring">Industrial Electrical Wiring</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- SHIFT -->
+              <div>
+                <label class="block text-label-md font-label-md text-on-surface mb-2">
+                  Preferred Session / Shift <span class="text-primary">*</span>
+                </label>
+
+                <div class="grid grid-cols-3 gap-3">
+                  <label class="flex items-center justify-center p-3 rounded-lg border border-outline-variant/50 cursor-pointer hover:border-primary hover:bg-surface-container-low transition-colors">
+                    <input checked class="text-primary focus:ring-primary h-4 w-4" name="shift" type="radio" value="Morning" required />
+                    <span class="ml-2.5 text-label-md font-label-md text-on-surface">Morning</span>
+                  </label>
+
+                  <label class="flex items-center justify-center p-3 rounded-lg border border-outline-variant/50 cursor-pointer hover:border-primary hover:bg-surface-container-low transition-colors">
+                    <input class="text-primary focus:ring-primary h-4 w-4" name="shift" type="radio" value="Afternoon" />
+                    <span class="ml-2.5 text-label-md font-label-md text-on-surface">Afternoon</span>
+                  </label>
+
+                  <label class="flex items-center justify-center p-3 rounded-lg border border-outline-variant/50 cursor-pointer hover:border-primary hover:bg-surface-container-low transition-colors">
+                    <input class="text-primary focus:ring-primary h-4 w-4" name="shift" type="radio" value="Weekend" />
+                    <span class="ml-2.5 text-label-md font-label-md text-on-surface">Weekend</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- MESSAGE -->
+              <div>
+                <label class="block text-label-md font-label-md text-on-surface mb-1.5" for="statement">
+                  Statement of Interest / Message
+                </label>
+                <textarea
+                  class="w-full px-4 py-2.5 bg-surface-container-lowest border border-outline-variant/60 rounded-lg text-on-surface text-body-md font-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
+                  id="statement"
+                  name="statement"
+                  placeholder="Tell us about your educational goals or any prior vocational experience..."
+                  rows="3"
+                ></textarea>
+              </div>
+
+              <!-- TERMS AND CONDITIONS -->
+              <div class="pt-2">
+                <label class="flex items-start gap-3 cursor-pointer">
+                  <input class="mt-1 rounded text-primary focus:ring-primary h-4 w-4 border-outline-variant" required type="checkbox" />
+                  <span class="text-body-sm font-body-sm text-on-surface-variant">
+                    I confirm that the details provided are accurate and agree to adhere to the code of conduct, training policies, and quality standards established by SHED Skills Training.
+                  </span>
+                </label>
+              </div>
+
+              <!-- SUBMIT BUTTON -->
+              <div class="pt-4">
+                <button class="w-full flex items-center justify-center gap-2 bg-primary-container text-on-primary py-3.5 px-6 rounded-lg font-label-lg text-label-lg hover:bg-primary transition-all shadow-md active:scale-[0.99]" type="submit">
+                  <span class="material-symbols-outlined" style="font-size: 20px;">lock</span>
+                  Submit Registration Application
+                </button>
+
+                <p class="text-center text-label-sm font-label-sm text-on-surface-variant mt-2.5">
+                  Submission includes free vocational orientation and aptitude evaluation.
+                </p>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: CONTACT INFORMATION -->
+        <div class="lg:col-span-5 space-y-6">
+
+          <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-6 shadow-sm space-y-5">
+
+            <div class="border-b border-outline-variant/20 pb-4">
+              <span class="inline-flex items-center gap-1 text-label-sm font-label-sm font-bold text-secondary tracking-wide uppercase">
+                Direct Contact
+              </span>
+              <h3 class="text-headline-sm font-headline-sm text-on-surface mt-1">Campus Information</h3>
+            </div>
+
+            <!-- ADDRESS -->
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined" style="font-size: 22px;">location_on</span>
+              </div>
+              <div>
+                <p class="text-label-md font-label-md text-on-surface font-semibold">Campus Location &amp; Address</p>
+                <p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
+                  SHED Foundation Vocational Training Campus, Sector 11-A, North Karachi / Main Campus Placeholder, Karachi, Pakistan
+                </p>
+              </div>
+            </div>
+
+            <!-- PHONE -->
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined" style="font-size: 22px;">call</span>
+              </div>
+              <div>
+                <p class="text-label-md font-label-md text-on-surface font-semibold">Official Helpline &amp; Phone</p>
+                <p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                  +92 (021) 3690-0000 / +92 (300) 000-0000 [Placeholder]
+                </p>
+              </div>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined" style="font-size: 22px;">mail</span>
+              </div>
+              <div>
+                <p class="text-label-md font-label-md text-on-surface font-semibold">Official Email</p>
+                <p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                  skills@shedfoundation.org.pk / admissions@shedfoundation.org.pk [Placeholder]
+                </p>
+              </div>
+            </div>
+
+            <!-- OFFICE HOURS -->
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined" style="font-size: 22px;">schedule</span>
+              </div>
+              <div>
+                <p class="text-label-md font-label-md text-on-surface font-semibold">Office &amp; Inquiry Hours</p>
+                <p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                  Monday – Saturday: 8:30 AM – 5:00 PM | Sunday: Closed
+                </p>
+              </div>
+            </div>
+
+            <!-- SOCIAL LINKS -->
+            <div class="pt-4 border-t border-outline-variant/20">
+              <p class="text-label-sm font-label-sm text-on-surface-variant font-semibold mb-3">Connect on Social Channels</p>
+
+              <div class="flex items-center gap-3">
+                <a aria-label="Facebook" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-secondary-fixed transition-colors" href="#">
+                  <span class="material-symbols-outlined" style="font-size: 20px;">public</span>
+                </a>
+
+                <a aria-label="YouTube" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-secondary-fixed transition-colors" href="#">
+                  <span class="material-symbols-outlined" style="font-size: 20px;">smart_display</span>
+                </a>
+
+                <a aria-label="LinkedIn" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-secondary-fixed transition-colors" href="#">
+                  <span class="material-symbols-outlined" style="font-size: 20px;">work</span>
+                </a>
+
+                <a aria-label="Instagram" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-secondary-fixed transition-colors" href="#">
+                  <span class="material-symbols-outlined" style="font-size: 20px;">photo_camera</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CAMPUS MAP -->
+          <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden shadow-sm">
+
+            <div class="relative h-56 bg-surface-container flex flex-col items-center justify-center text-center p-6" data-location="Karachi">
+              <div class="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#940012_1px,transparent_1px)] [background-size:16px_16px]"></div>
+
+              <div class="relative z-10 flex flex-col items-center">
+                <div class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-3 shadow-md animate-bounce">
+                  <span class="material-symbols-outlined" style="font-size: 24px;">pin_drop</span>
+                </div>
+
+                <h4 class="text-title-md font-title-md text-on-surface font-bold">North Karachi Main Campus</h4>
+                <p class="text-body-sm font-body-sm text-on-surface-variant max-w-xs mt-1">
+                  Sector 11-A, North Karachi Vocational Facility
+                </p>
+              </div>
+            </div>
+
+            <div class="p-4 bg-surface-container-low flex items-center justify-between border-t border-outline-variant/20">
+              <span class="text-label-md font-label-md text-on-surface-variant flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-secondary" style="font-size: 18px;">directions_bus</span>
+                Accessible via Green Line Metro
+              </span>
+
+              <a class="inline-flex items-center gap-1 bg-surface-container-lowest border border-outline-variant/50 px-3.5 py-1.5 rounded-lg text-label-md font-label-md text-primary hover:bg-primary-container hover:text-on-primary transition-all shadow-sm" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+                Get Directions
+                <span class="material-symbols-outlined" style="font-size: 16px;">open_in_new</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="bg-surface-container-low border-t border-outline-variant/20 py-16">
+      <div class="max-w-4xl mx-auto px-6 md:px-8">
+
+        <div class="text-center mb-10">
+          <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-label-sm font-label-sm bg-secondary-fixed text-on-secondary-fixed mb-2.5">
+            Admissions Knowledge Base
+          </span>
+
+          <h2 class="text-headline-lg font-headline-lg text-on-surface">Frequently Asked Questions</h2>
+
+          <p class="text-body-md font-body-md text-on-surface-variant mt-2">
+            Answers to common enrollment queries regarding fees, certificates, and class schedules.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+
+          <!-- FAQ 1 -->
+          <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-5 shadow-sm transition-all hover:border-primary/40">
+            <details class="group cursor-pointer">
+              <summary class="flex items-center justify-between text-title-md font-title-md text-on-surface list-none">
+                <span>Are scholarships or fee waivers available?</span>
+                <span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform">keyboard_arrow_down</span>
+              </summary>
+              <div class="pt-3 text-body-md font-body-md text-on-surface-variant border-t border-outline-variant/20 mt-3 leading-relaxed">
+                Yes. Through SHED Foundation's endowment and community partnerships, merit and need-based fee waivers are available for deserving applicants. Indicate your scholarship request during your initial on-campus interview.
+              </div>
+            </details>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-5 shadow-sm transition-all hover:border-primary/40">
+            <details class="group cursor-pointer">
+              <summary class="flex items-center justify-between text-title-md font-title-md text-on-surface list-none">
+                <span>What certificates are awarded upon completion?</span>
+                <span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform">keyboard_arrow_down</span>
+              </summary>
+              <div class="pt-3 text-body-md font-body-md text-on-surface-variant border-t border-outline-variant/20 mt-3 leading-relaxed">
+                Graduates receive an accredited Technical Competency Diploma issued by SHED Skills Training Program, recognized by provincial technical education boards and verified through our digital badge registry.
+              </div>
+            </details>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-5 shadow-sm transition-all hover:border-primary/40">
+            <details class="group cursor-pointer">
+              <summary class="flex items-center justify-between text-title-md font-title-md text-on-surface list-none">
+                <span>Is job placement assistance guaranteed?</span>
+                <span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform">keyboard_arrow_down</span>
+              </summary>
+              <div class="pt-3 text-body-md font-body-md text-on-surface-variant border-t border-outline-variant/20 mt-3 leading-relaxed">
+                While employment is subject to market demand and student academic standing, SHED operates an active Career &amp; Placement Cell with over 45 industry partners across solar, IT, and HVAC sectors for direct apprenticeships.
+              </div>
+            </details>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-5 shadow-sm transition-all hover:border-primary/40">
+            <details class="group cursor-pointer">
+              <summary class="flex items-center justify-between text-title-md font-title-md text-on-surface list-none">
+                <span>Can working professionals attend evening or weekend classes?</span>
+                <span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform">keyboard_arrow_down</span>
+              </summary>
+              <div class="pt-3 text-body-md font-body-md text-on-surface-variant border-t border-outline-variant/20 mt-3 leading-relaxed">
+                Yes. We offer specialized Weekend and Evening Executive batches for our Digital Skills, Solar Design, and Electrical modules specifically tailored for working technicians and professionals.
+              </div>
+            </details>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-surface-container border-t border-outline-variant/40">
+    <div class="w-full max-w-7xl mx-auto px-6 md:px-8 py-12 flex flex-col space-y-8">
+
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-outline-variant/30">
+        <div>
+          <a class="inline-block" href="/">
+            <img
+              alt="SHED Skills Training Program official insignia logo"
+              class="h-10 w-auto object-contain"
+              src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"
+            />
+          </a>
+
+          <p class="text-body-sm font-body-sm text-on-surface-variant mt-2 max-w-md">
+            Dedicated to uplifting youth through practical trades, sustainable technology vocations, and market-ready digital skills.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3 bg-surface-container-lowest px-4 py-3 rounded-lg border border-outline-variant/30">
+          <span class="material-symbols-outlined text-primary" style="font-size: 24px;">call</span>
+          <div>
+            <p class="text-label-sm font-label-sm text-on-surface-variant">Direct Inquiries Desk</p>
+            <p class="text-label-lg font-label-lg text-primary font-bold">(555) 019-2834</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER LINKS -->
+      <div class="flex flex-wrap items-center gap-x-8 gap-y-3">
+        <a class="text-on-surface-variant hover:text-primary text-body-sm font-body-sm transition-colors" href="/">Home</a>
+        <a class="text-on-surface-variant hover:text-primary text-body-sm font-body-sm transition-colors" href="/about">About Us</a>
+        <a class="text-on-surface-variant hover:text-primary text-body-sm font-body-sm transition-colors" href="/courses">Courses &amp; Training</a>
+        <a class="text-primary font-semibold text-body-sm font-body-sm" href="/contact">Contact &amp; Registration</a>
+        <a class="text-on-surface-variant hover:text-primary text-body-sm font-body-sm transition-colors" href="/accreditation">Accreditation &amp; Quality Standards</a>
+        <a class="text-on-surface-variant hover:text-primary text-body-sm font-body-sm transition-colors" href="/privacy">Privacy Policy</a>
+        <a class="text-on-surface-variant hover:text-primary text-body-sm font-body-sm transition-colors" href="/terms">Terms of Enrollment</a>
+      </div>
+
+      <!-- COPYRIGHT -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-4 border-t border-outline-variant/20 text-body-sm font-body-sm text-on-surface-variant">
+        <p>© 2025 SHED Skills Training Program. Empowering Skills, Building Futures. All rights reserved.</p>
+        <p class="flex items-center gap-1.5 text-label-sm font-label-sm text-outline">
+          <span class="material-symbols-outlined" style="font-size: 16px;">verified</span>
+          Official Institutional Admissions Portal
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

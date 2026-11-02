@@ -1,0 +1,860 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Us | SHED Skills Training Program</title>
+  <meta name="description" content="Learn about the SHED Skills Training Program, its mission, vision, values, and commitment to skills development and learning.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+        <link rel="icon" type="image/png" href="Img/SHED Foundation Lightbulb Emblem.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#940012",
+            "primary-dark": "#69000d",
+            secondary: "#ae3111",
+            "secondary-light": "#fd6945",
+            background: "#faf8ff",
+            muted: "#5b626f",
+            border: "#e8d8d6"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "sans-serif"]
+          },
+          boxShadow: {
+            soft: "0 12px 35px rgba(70, 10, 20, 0.08)"
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      font-family: "Plus Jakarta Sans", sans-serif;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings:
+        "FILL" 0,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 24;
+    }
+
+    .hero-pattern {
+      background-image: radial-gradient(#94001214 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .nav-link {
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: #940012;
+    }
+
+    .value-card,
+    .facility-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .value-card:hover,
+    .facility-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(70, 10, 20, 0.08);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-background text-slate-900 antialiased">
+
+  <!-- Announcement Bar -->
+  <div class="bg-primary text-white">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-5 py-3 text-center text-xs sm:flex-row sm:text-left">
+
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-base">school</span>
+        <span>SHED Skills Training Program</span>
+      </div>
+
+      <a
+        href="https://shedfoundation.org.pk/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-semibold hover:underline"
+      >
+        Visit SHED Foundation Website ↗
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 border-b border-border bg-white shadow-sm">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 lg:px-8">
+
+      <!-- Official Logo -->
+      <a href="index.html" class="flex shrink-0 items-center gap-3" aria-label="SHED Skills Training home">
+        <img
+          src="https://shedfoundation.org.pk/wp-content/uploads/2026/04/Shed-Skills-Training-Logo.jpeg"
+          alt="SHED Skills Training Program logo"
+          class="h-14 w-14 rounded-lg object-contain"
+        >
+
+        <div>
+          <span class="block text-base font-extrabold leading-tight text-primary sm:text-lg">
+            SHED Skills Training
+          </span>
+          <span class="mt-1 block text-xs text-slate-500">
+            Learn Today. Grow Tomorrow.
+          </span>
+        </div>
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="menuToggle"
+        type="button"
+        class="rounded-lg border border-border p-2 text-primary md:hidden"
+        aria-label="Open navigation menu"
+        aria-controls="mainNavigation"
+        aria-expanded="false"
+      >
+        <span id="menuIcon" class="material-symbols-outlined">menu</span>
+      </button>
+
+      <!-- Navigation Links -->
+      <nav
+        id="mainNavigation"
+        class="absolute left-0 top-full hidden w-full border-b border-border bg-white px-5 pb-5 shadow-lg md:static md:block md:w-auto md:border-0 md:bg-transparent md:p-0 md:shadow-none"
+        aria-label="Main navigation"
+      >
+        <ul class="flex flex-col gap-1 md:flex-row md:items-center md:gap-7">
+
+          <li>
+            <a href="index.html" class="nav-link block py-3 text-sm font-semibold text-slate-600 md:py-2">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="about.html" aria-current="page" class="block border-l-4 border-primary py-3 pl-3 text-sm font-bold text-primary md:border-b-2 md:border-l-0 md:py-2 md:pl-0">
+              About Us
+            </a>
+          </li>
+
+          <li>
+            <a href="courses.html" class="nav-link block py-3 text-sm font-semibold text-slate-600 md:py-2">
+              Courses &amp; Training
+            </a>
+          </li>
+
+          <li>
+            <a href="contact.html" class="nav-link block py-3 text-sm font-semibold text-slate-600 md:py-2">
+              Contact
+            </a>
+          </li>
+
+          <li class="pt-2 md:pt-0">
+            <a
+              href="contact.html#registration"
+              class="flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-bold text-white transition hover:bg-primary-dark md:py-3"
+            >
+              Register Now
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern relative overflow-hidden border-b border-border bg-white">
+      <div class="absolute -right-32 -top-24 h-80 w-80 rounded-full bg-red-100 opacity-60 blur-3xl"></div>
+      <div class="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-orange-100 opacity-60 blur-3xl"></div>
+
+      <div class="relative mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="mb-8 flex items-center gap-2 text-sm text-slate-500">
+          <a href="index.html" class="hover:text-primary">Home</a>
+          <span>/</span>
+          <span class="font-semibold text-primary">About Us</span>
+        </nav>
+
+        <div class="grid items-center gap-12 lg:grid-cols-2">
+
+          <div>
+            <span class="mb-5 inline-flex items-center gap-2 rounded-full border border-red-100 bg-red-50 px-4 py-2 text-xs font-bold uppercase tracking-wider text-primary">
+              <span class="material-symbols-outlined text-base">school</span>
+              About SHED Skills Training
+            </span>
+
+            <h1 class="mb-6 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+              Empowering People Through
+              <span class="text-primary">Skills and Learning</span>
+            </h1>
+
+            <p class="mb-8 max-w-xl text-base leading-8 text-slate-600 md:text-lg">
+              Discover the purpose behind the SHED Skills Training Program.
+              Explore our approach to learning, skills development, and helping
+              individuals prepare for future opportunities.
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+              <a
+                href="courses.html"
+                class="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3.5 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-primary-dark"
+              >
+                Explore Courses
+                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+              </a>
+
+              <a
+                href="contact.html"
+                class="inline-flex items-center gap-2 rounded-lg border border-border bg-white px-6 py-3.5 text-sm font-bold text-primary transition hover:border-primary"
+              >
+                Contact Us
+                <span class="material-symbols-outlined text-lg">call</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -inset-3 rounded-3xl bg-red-100"></div>
+
+            <img
+              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=85"
+              alt="Students collaborating in a learning environment"
+              class="relative h-72 w-full rounded-2xl object-cover shadow-soft sm:h-96 lg:h-[460px]"
+              fetchpriority="high"
+            >
+
+            <div class="absolute -bottom-5 left-4 right-4 rounded-xl border border-border bg-white p-5 shadow-soft sm:left-8 sm:right-auto sm:max-w-sm">
+              <div class="flex items-center gap-3">
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-50 text-primary">
+                  <span class="material-symbols-outlined text-2xl">lightbulb</span>
+                </div>
+
+                <div>
+                  <h2 class="font-bold text-slate-900">Skills for the Future</h2>
+                  <p class="mt-1 text-sm text-slate-500">
+                    Learn, practice, and keep growing.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="px-5 py-20 md:px-8 md:py-24">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
+
+        <div class="relative">
+          <img
+            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85"
+            alt="People working together during a professional learning activity"
+            class="h-80 w-full rounded-2xl object-cover shadow-soft sm:h-[440px]"
+            loading="lazy"
+          >
+
+          <div class="absolute -bottom-5 -right-3 rounded-xl bg-primary p-5 text-white shadow-lg sm:-right-5 sm:p-6">
+            <span class="material-symbols-outlined mb-1 text-3xl">trending_up</span>
+            <p class="font-bold">Learn and Progress</p>
+            <p class="mt-1 text-xs text-red-100">Build skills for tomorrow</p>
+          </div>
+        </div>
+
+        <div class="pt-5 lg:pt-0">
+          <span class="mb-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-secondary">
+            <span class="material-symbols-outlined text-lg">verified_user</span>
+            Who We Are
+          </span>
+
+          <h2 class="mb-6 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
+            Learning That Supports Personal and Professional Growth
+          </h2>
+
+          <p class="mb-5 leading-8 text-slate-600">
+            The SHED Skills Training Program is focused on providing information
+            about skills development and training opportunities. This website
+            helps visitors explore the program, learn about potential training
+            areas, and find the right way to make an inquiry.
+          </p>
+
+          <p class="mb-6 leading-8 text-slate-600">
+            We believe that learning practical skills can help individuals
+            strengthen their abilities, build confidence, and prepare for
+            different educational and professional pathways.
+          </p>
+
+          <ul class="mb-8 space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined mt-0.5 text-xl text-primary">check_circle</span>
+              <span class="text-slate-700">Encouraging continuous learning and development.</span>
+            </li>
+
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined mt-0.5 text-xl text-primary">check_circle</span>
+              <span class="text-slate-700">Helping learners explore practical skill areas.</span>
+            </li>
+
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined mt-0.5 text-xl text-primary">check_circle</span>
+              <span class="text-slate-700">Making program and registration information easier to access.</span>
+            </li>
+          </ul>
+
+          <a
+            href="courses.html"
+            class="inline-flex items-center gap-2 font-bold text-primary hover:underline"
+          >
+            Discover Training Options
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Mission and Vision -->
+    <section class="border-y border-border bg-white px-5 py-20 md:px-8 md:py-24">
+      <div class="mx-auto max-w-7xl">
+
+        <div class="mx-auto mb-14 max-w-2xl text-center">
+          <span class="text-sm font-bold uppercase tracking-widest text-secondary">
+            Our Direction
+          </span>
+
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
+            Our Mission and Vision
+          </h2>
+
+          <p class="mt-4 leading-7 text-slate-600">
+            Our approach is built around learning, practical development,
+            and helping people explore opportunities for the future.
+          </p>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2">
+
+          <!-- Vision -->
+          <article class="relative overflow-hidden rounded-2xl border border-border bg-background p-7 sm:p-9">
+            <div class="absolute left-0 top-0 h-full w-1.5 bg-secondary"></div>
+
+            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-orange-100 text-secondary">
+              <span class="material-symbols-outlined text-3xl">visibility</span>
+            </div>
+
+            <h3 class="mb-4 text-2xl font-bold">Our Vision</h3>
+
+            <p class="leading-8 text-slate-600">
+              To encourage a future where individuals have opportunities to
+              develop useful skills, improve their knowledge, and work toward
+              personal growth and sustainable livelihoods.
+            </p>
+          </article>
+
+          <!-- Mission -->
+          <article class="relative overflow-hidden rounded-2xl border border-border bg-background p-7 sm:p-9">
+            <div class="absolute left-0 top-0 h-full w-1.5 bg-primary"></div>
+
+            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100 text-primary">
+              <span class="material-symbols-outlined text-3xl">track_changes</span>
+            </div>
+
+            <h3 class="mb-4 text-2xl font-bold">Our Mission</h3>
+
+            <p class="leading-8 text-slate-600">
+              To promote skills development and accessible learning by helping
+              interested individuals discover training opportunities and
+              information that supports their educational and professional goals.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="px-5 py-20 md:px-8 md:py-24">
+      <div class="mx-auto max-w-7xl">
+
+        <div class="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div>
+            <span class="text-sm font-bold uppercase tracking-widest text-secondary">
+              What Guides Us
+            </span>
+            <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              Our Core Values
+            </h2>
+          </div>
+
+          <p class="max-w-lg leading-7 text-slate-600">
+            These principles guide the way we present learning opportunities
+            and support the goals of prospective learners.
+          </p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+          <article class="value-card rounded-2xl border border-border bg-white p-6">
+            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-red-50 text-primary">
+              <span class="material-symbols-outlined text-3xl">diversity_3</span>
+            </div>
+
+            <h3 class="mb-3 text-lg font-bold">Inclusion</h3>
+
+            <p class="text-sm leading-7 text-slate-600">
+              Encouraging respectful learning and opportunities for people
+              from different backgrounds.
+            </p>
+          </article>
+
+          <article class="value-card rounded-2xl border border-border bg-white p-6">
+            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-orange-50 text-secondary">
+              <span class="material-symbols-outlined text-3xl">handshake</span>
+            </div>
+
+            <h3 class="mb-3 text-lg font-bold">Integrity</h3>
+
+            <p class="text-sm leading-7 text-slate-600">
+              Promoting honesty, respect, responsibility, and clear
+              communication with learners.
+            </p>
+          </article>
+
+          <article class="value-card rounded-2xl border border-border bg-white p-6">
+            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-red-50 text-primary">
+              <span class="material-symbols-outlined text-3xl">psychology</span>
+            </div>
+
+            <h3 class="mb-3 text-lg font-bold">Lifelong Learning</h3>
+
+            <p class="text-sm leading-7 text-slate-600">
+              Supporting curiosity, continued development, and the desire
+              to improve skills over time.
+            </p>
+          </article>
+
+          <article class="value-card rounded-2xl border border-border bg-white p-6">
+            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-orange-50 text-secondary">
+              <span class="material-symbols-outlined text-3xl">workspace_premium</span>
+            </div>
+
+            <h3 class="mb-3 text-lg font-bold">Quality</h3>
+
+            <p class="text-sm leading-7 text-slate-600">
+              Valuing useful information, clear guidance, and a positive
+              learning experience.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Methodology -->
+    <section class="border-y border-border bg-white px-5 py-20 md:px-8 md:py-24">
+      <div class="mx-auto max-w-7xl">
+
+        <div class="mx-auto mb-14 max-w-2xl text-center">
+          <span class="text-sm font-bold uppercase tracking-widest text-primary">
+            Learning Approach
+          </span>
+
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
+            A Journey from Learning to Application
+          </h2>
+
+          <p class="mt-4 leading-7 text-slate-600">
+            A simple framework for understanding how skills can be developed
+            and applied in everyday and professional settings.
+          </p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+          <article class="rounded-2xl border border-border bg-background p-6">
+            <span class="mb-5 block text-4xl font-extrabold text-secondary">01</span>
+            <h3 class="mb-3 text-lg font-bold">Discover</h3>
+            <p class="text-sm leading-7 text-slate-600">
+              Explore your interests, identify learning goals, and learn
+              about relevant training options.
+            </p>
+          </article>
+
+          <article class="rounded-2xl border border-border bg-background p-6">
+            <span class="mb-5 block text-4xl font-extrabold text-primary">02</span>
+            <h3 class="mb-3 text-lg font-bold">Learn</h3>
+            <p class="text-sm leading-7 text-slate-600">
+              Build knowledge and understand the foundations of a chosen
+              skill or subject.
+            </p>
+          </article>
+
+          <article class="rounded-2xl border border-border bg-background p-6">
+            <span class="mb-5 block text-4xl font-extrabold text-secondary">03</span>
+            <h3 class="mb-3 text-lg font-bold">Practice</h3>
+            <p class="text-sm leading-7 text-slate-600">
+              Apply what you learn through suitable exercises, activities,
+              or practical projects.
+            </p>
+          </article>
+
+          <article class="rounded-2xl border border-border bg-background p-6">
+            <span class="mb-5 block text-4xl font-extrabold text-primary">04</span>
+            <h3 class="mb-3 text-lg font-bold">Progress</h3>
+            <p class="text-sm leading-7 text-slate-600">
+              Continue improving your abilities and explore relevant next
+              steps for your future.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Areas -->
+    <section class="px-5 py-20 md:px-8 md:py-24">
+      <div class="mx-auto max-w-7xl">
+
+        <div class="mb-12 text-center">
+          <span class="text-sm font-bold uppercase tracking-widest text-secondary">
+            Explore Possibilities
+          </span>
+
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
+            Skills for Different Goals
+          </h2>
+
+          <p class="mx-auto mt-4 max-w-2xl leading-7 text-slate-600">
+            Examples of learning areas visitors may wish to explore.
+            Please check the Courses page or contact SHED to confirm
+            which programs are currently available.
+          </p>
+        </div>
+
+        <div class="grid gap-7 md:grid-cols-3">
+
+          <article class="facility-card overflow-hidden rounded-2xl border border-border bg-white">
+            <img
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85"
+              alt="Digital technology and computer learning"
+              class="h-56 w-full object-cover"
+              loading="lazy"
+            >
+
+            <div class="p-6">
+              <span class="mb-3 inline-flex rounded-full bg-red-50 px-3 py-1 text-xs font-bold text-primary">
+                DIGITAL LEARNING
+              </span>
+
+              <h3 class="mb-3 text-xl font-bold">Computer and Digital Skills</h3>
+
+              <p class="mb-5 text-sm leading-7 text-slate-600">
+                Explore computer literacy, digital tools, and technology-related
+                learning opportunities.
+              </p>
+
+              <a href="courses.html" class="inline-flex items-center gap-2 font-bold text-primary hover:underline">
+                Explore Courses
+                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="facility-card overflow-hidden rounded-2xl border border-border bg-white">
+            <img
+              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85"
+              alt="Professional development and teamwork"
+              class="h-56 w-full object-cover"
+              loading="lazy"
+            >
+
+            <div class="p-6">
+              <span class="mb-3 inline-flex rounded-full bg-orange-50 px-3 py-1 text-xs font-bold text-secondary">
+                PROFESSIONAL GROWTH
+              </span>
+
+              <h3 class="mb-3 text-xl font-bold">Workplace Skills</h3>
+
+              <p class="mb-5 text-sm leading-7 text-slate-600">
+                Learn about communication, teamwork, organization, and
+                professional development.
+              </p>
+
+              <a href="courses.html" class="inline-flex items-center gap-2 font-bold text-primary hover:underline">
+                Explore Courses
+                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="facility-card overflow-hidden rounded-2xl border border-border bg-white">
+            <img
+              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=85"
+              alt="Instructor guiding learners during a training session"
+              class="h-56 w-full object-cover"
+              loading="lazy"
+            >
+
+            <div class="p-6">
+              <span class="mb-3 inline-flex rounded-full bg-red-50 px-3 py-1 text-xs font-bold text-primary">
+                PERSONAL DEVELOPMENT
+              </span>
+
+              <h3 class="mb-3 text-xl font-bold">Learning and Development</h3>
+
+              <p class="mb-5 text-sm leading-7 text-slate-600">
+                Explore ways to strengthen knowledge, develop confidence,
+                and continue learning.
+              </p>
+
+              <a href="courses.html" class="inline-flex items-center gap-2 font-bold text-primary hover:underline">
+                Explore Courses
+                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Commitment -->
+    <section class="border-y border-border bg-red-50 px-5 py-16 md:px-8 md:py-20">
+      <div class="mx-auto grid max-w-7xl items-center gap-8 md:grid-cols-2">
+
+        <div>
+          <span class="text-sm font-bold uppercase tracking-widest text-secondary">
+            Our Commitment
+          </span>
+
+          <h2 class="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">
+            Every Learning Journey Begins with a First Step
+          </h2>
+
+          <p class="mt-5 leading-8 text-slate-600">
+            Choosing a learning pathway is an important decision. We encourage
+            visitors to explore their interests, review available program
+            information, and contact SHED for guidance about suitable
+            opportunities.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+
+          <div class="rounded-xl border border-red-100 bg-white p-6">
+            <span class="material-symbols-outlined mb-3 text-3xl text-primary">menu_book</span>
+            <h3 class="mb-2 font-bold">Explore</h3>
+            <p class="text-sm leading-6 text-slate-600">
+              Review the available training information.
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-red-100 bg-white p-6">
+            <span class="material-symbols-outlined mb-3 text-3xl text-secondary">contact_support</span>
+            <h3 class="mb-2 font-bold">Connect</h3>
+            <p class="text-sm leading-6 text-slate-600">
+              Ask questions about programs and enrollment.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-primary px-5 py-16 text-white md:px-8 md:py-20">
+      <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+
+        <div>
+          <h2 class="max-w-2xl text-3xl font-extrabold leading-tight sm:text-4xl">
+            Ready to Explore Your Learning Opportunities?
+          </h2>
+
+          <p class="mt-4 max-w-2xl leading-7 text-red-100">
+            Browse the training information or get in touch with SHED
+            to ask about current programs and registration.
+          </p>
+        </div>
+
+        <div class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+
+          <a
+            href="courses.html"
+            class="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3.5 text-sm font-bold text-primary transition hover:bg-red-50"
+          >
+            Browse Courses
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+
+          <a
+            href="contact.html#registration"
+            class="inline-flex items-center justify-center gap-2 rounded-lg border border-white/50 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-white/10"
+          >
+            Contact / Register
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-white">
+    <div class="mx-auto max-w-7xl px-5 py-14 md:px-8">
+
+      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+
+        <!-- Brand -->
+        <div>
+          <a href="index.html" class="mb-5 inline-flex items-center gap-3">
+            <img
+              src="https://shedfoundation.org.pk/wp-content/uploads/2026/04/Shed-Skills-Training-Logo.jpeg"
+              alt="SHED Skills Training Program logo"
+              class="h-14 w-14 rounded-lg bg-white object-contain"
+              loading="lazy"
+            >
+
+            <span class="font-bold leading-tight">
+              SHED Skills<br>Training Program
+            </span>
+          </a>
+
+          <p class="max-w-sm text-sm leading-7 text-slate-400">
+            Discover learning opportunities, explore skills development,
+            and take the next step toward your personal and professional goals.
+          </p>
+
+          <a
+            href="https://shedfoundation.org.pk/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-white hover:text-red-300"
+          >
+            Official SHED Website
+            <span class="material-symbols-outlined text-base">open_in_new</span>
+          </a>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="mb-5 text-lg font-bold">Quick Links</h3>
+
+          <ul class="space-y-3 text-sm text-slate-400">
+            <li><a href="index.html" class="hover:text-white">Home</a></li>
+            <li><a href="about.html" class="text-red-300">About Us</a></li>
+            <li><a href="courses.html" class="hover:text-white">Courses &amp; Training</a></li>
+            <li><a href="contact.html" class="hover:text-white">Contact Us</a></li>
+            <li><a href="contact.html#registration" class="hover:text-white">Registration Information</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h3 class="mb-5 text-lg font-bold">Contact Information</h3>
+
+          <p class="mb-4 text-sm leading-7 text-slate-400">
+            For inquiries about current training programs, registration,
+            and other information, please contact SHED through its official
+            website.
+          </p>
+
+          <a
+            href="https://shedfoundation.org.pk/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-lg bg-white/10 px-4 py-3 text-sm font-semibold transition hover:bg-white/20"
+          >
+            <span class="material-symbols-outlined">language</span>
+            Visit Official Website
+          </a>
+        </div>
+
+      </div>
+
+      <div class="mt-12 flex flex-col justify-between gap-3 border-t border-white/10 pt-6 text-xs text-slate-400 sm:flex-row">
+        <p>
+          © <span id="currentYear"></span> SHED Skills Training Program.
+        </p>
+
+        <a href="#top" class="hover:text-white">Back to top ↑</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Mobile Navigation and Footer Script -->
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNavigation = document.getElementById("mainNavigation");
+    const menuIcon = document.getElementById("menuIcon");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = mainNavigation.classList.toggle("hidden") === false;
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+
+      menuIcon.textContent = isOpen ? "close" : "menu";
+    });
+
+    mainNavigation.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        mainNavigation.classList.add("hidden");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuIcon.textContent = "menu";
+      });
+    });
+
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>

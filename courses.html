@@ -1,0 +1,977 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses & Training | SHED Skills Training</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="Img/SHED Foundation Lightbulb Emblem.png">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#940012",
+            secondary: "#ae3111",
+            background: "#faf8ff",
+            surface: "#ffffff",
+            muted: "#5b403e"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      background: #faf8ff;
+    }
+
+    .material-symbols-outlined {
+      vertical-align: middle;
+    }
+
+    .course-card {
+      transition: 0.3s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.09);
+    }
+
+    .modal {
+      display: none;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+  </style>
+</head>
+
+<body class="text-gray-800">
+
+<!-- NAVIGATION -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="logo.png" alt="SHED Logo" class="h-12 w-auto">
+      <span class="font-extrabold text-primary text-xl">SHED</span>
+    </a>
+
+    <nav class="flex flex-wrap items-center gap-5 text-sm font-semibold">
+      <a href="index.html" class="hover:text-primary">Home</a>
+      <a href="about.html" class="hover:text-primary">About Us</a>
+      <a href="courses.html" class="text-primary border-b-2 border-primary pb-1">Courses & Training</a>
+      <a href="contact.html" class="hover:text-primary">Contact</a>
+    </nav>
+
+    <a href="#catalog"
+       class="bg-primary text-white px-5 py-3 rounded-lg font-bold hover:bg-red-900">
+      Apply Now →
+    </a>
+
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="bg-gradient-to-b from-red-50 to-background py-16">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="text-sm text-gray-500 mb-6">
+      <a href="index.html">Home</a> /
+      <span class="text-primary font-semibold">Courses & Training</span>
+    </div>
+
+    <div class="max-w-3xl">
+
+      <span class="inline-block bg-red-100 text-primary px-4 py-2 rounded-full text-xs font-bold mb-5">
+        SKILL DEVELOPMENT CURRICULUM
+      </span>
+
+      <h1 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight mb-5">
+        Comprehensive Training Programs & Professional Diplomas
+      </h1>
+
+      <p class="text-lg text-gray-600 leading-relaxed">
+        Explore industry-focused training programs designed to develop
+        professional skills, improve career opportunities, and support
+        self-employment.
+      </p>
+
+    </div>
+
+    <div class="mt-8 bg-white border-l-4 border-secondary p-5 rounded-lg shadow-sm max-w-4xl">
+      <p class="text-sm text-gray-700">
+        <strong class="text-secondary">Note:</strong>
+        Course listings, durations, and eligibility criteria shown on
+        this page are illustrative sample offerings for the SHED Skills
+        Training curriculum.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- COURSES SECTION -->
+<section id="catalog" class="py-16">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="mb-10">
+      <h2 class="text-3xl font-extrabold text-primary mb-3">
+        Explore Our Training Programs
+      </h2>
+      <p class="text-gray-600">
+        Find a course that matches your interests and career goals.
+      </p>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="bg-white rounded-xl shadow-sm border p-5 mb-10">
+
+      <div class="flex flex-wrap gap-3 mb-6">
+
+        <button onclick="filterCategory('all',this)"
+          class="category-btn bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold">
+          All Programs
+        </button>
+
+        <button onclick="filterCategory('digital',this)"
+          class="category-btn bg-gray-100 px-5 py-2 rounded-full text-sm font-semibold hover:bg-red-100">
+          Digital Skills & IT
+        </button>
+
+        <button onclick="filterCategory('technical',this)"
+          class="category-btn bg-gray-100 px-5 py-2 rounded-full text-sm font-semibold hover:bg-red-100">
+          Technical & Vocational
+        </button>
+
+        <button onclick="filterCategory('hardware',this)"
+          class="category-btn bg-gray-100 px-5 py-2 rounded-full text-sm font-semibold hover:bg-red-100">
+          Electrical & Hardware
+        </button>
+
+        <button onclick="filterCategory('business',this)"
+          class="category-btn bg-gray-100 px-5 py-2 rounded-full text-sm font-semibold hover:bg-red-100">
+          Business & Entrepreneurship
+        </button>
+
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <input
+          type="text"
+          id="courseSearch"
+          oninput="filterCourses()"
+          placeholder="Search courses or skills..."
+          class="w-full border rounded-lg px-4 py-3 outline-none focus:border-primary">
+
+        <select id="courseLevel"
+          onchange="filterCourses()"
+          class="w-full border rounded-lg px-4 py-3 outline-none focus:border-primary">
+
+          <option value="all">All Difficulty Levels</option>
+          <option value="beginner">Beginner / Foundation</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+
+        </select>
+
+      </div>
+    </div>
+
+    <!-- COURSE CARDS -->
+    <div id="courseGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- COURSE 1 -->
+      <article class="course-card bg-white rounded-xl border overflow-hidden"
+        data-category="digital"
+        data-level="intermediate">
+
+        <div class="h-2 bg-primary"></div>
+
+        <div class="p-6">
+
+          <div class="flex justify-between items-center mb-4">
+            <span class="text-xs font-bold text-primary bg-red-50 px-3 py-2 rounded-full">
+              Digital Skills & IT
+            </span>
+            <span class="text-xs text-gray-500">6 Months</span>
+          </div>
+
+          <h3 class="text-xl font-bold mb-3">
+            Full-Stack Web Development & Modern Coding
+          </h3>
+
+          <p class="text-sm text-gray-600 mb-5">
+            Master modern frontend and backend development. Build database
+            systems, REST APIs, and professional web applications.
+          </p>
+
+          <div class="bg-gray-50 p-4 rounded-lg text-sm space-y-2 mb-5">
+            <p><strong>Eligibility:</strong> Intermediate / High School</p>
+            <p><strong>Format:</strong> In-Person Lab</p>
+          </div>
+
+          <p class="text-xs font-bold text-gray-500 mb-3">KEY SKILLS</p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="skill">React</span>
+            <span class="skill">Node.js</span>
+            <span class="skill">SQL Database</span>
+            <span class="skill">Git CI/CD</span>
+          </div>
+
+          <div class="flex gap-3">
+            <button onclick="showSyllabus(0)" class="outline-btn">View Syllabus</button>
+            <button onclick="applyCourse(0)" class="primary-btn">Apply</button>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- COURSE 2 -->
+      <article class="course-card bg-white rounded-xl border overflow-hidden"
+        data-category="digital"
+        data-level="beginner">
+
+        <div class="h-2 bg-secondary"></div>
+
+        <div class="p-6">
+
+          <div class="flex justify-between mb-4">
+            <span class="text-xs font-bold text-secondary bg-orange-50 px-3 py-2 rounded-full">
+              Digital Skills & IT
+            </span>
+            <span class="text-xs text-gray-500">3 Months</span>
+          </div>
+
+          <h3 class="text-xl font-bold mb-3">
+            Graphic Design, UI/UX & Digital Media
+          </h3>
+
+          <p class="text-sm text-gray-600 mb-5">
+            Learn visual communication, typography, design thinking,
+            wireframing, prototyping, and digital branding.
+          </p>
+
+          <div class="bg-gray-50 p-4 rounded-lg text-sm space-y-2 mb-5">
+            <p><strong>Eligibility:</strong> Matric / Open</p>
+            <p><strong>Format:</strong> Computer Lab</p>
+          </div>
+
+          <p class="text-xs font-bold text-gray-500 mb-3">KEY SKILLS</p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="skill">Figma</span>
+            <span class="skill">Photoshop</span>
+            <span class="skill">Brand Identity</span>
+            <span class="skill">User Research</span>
+          </div>
+
+          <div class="flex gap-3">
+            <button onclick="showSyllabus(1)" class="outline-btn">View Syllabus</button>
+            <button onclick="applyCourse(1)" class="primary-btn">Apply</button>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- COURSE 3 -->
+      <article class="course-card bg-white rounded-xl border overflow-hidden"
+        data-category="technical"
+        data-level="intermediate">
+
+        <div class="h-2 bg-primary"></div>
+
+        <div class="p-6">
+
+          <div class="flex justify-between mb-4">
+            <span class="text-xs font-bold text-primary bg-red-50 px-3 py-2 rounded-full">
+              Technical & Vocational
+            </span>
+            <span class="text-xs text-gray-500">6 Months</span>
+          </div>
+
+          <h3 class="text-xl font-bold mb-3">
+            Industrial Electrical Technician & Solar Installation
+          </h3>
+
+          <p class="text-sm text-gray-600 mb-5">
+            Hands-on training in motor control, distribution board wiring,
+            solar installation, and photovoltaic system maintenance.
+          </p>
+
+          <div class="bg-gray-50 p-4 rounded-lg text-sm space-y-2 mb-5">
+            <p><strong>Eligibility:</strong> Technical Foundation</p>
+            <p><strong>Format:</strong> Hands-on Workshop</p>
+          </div>
+
+          <p class="text-xs font-bold text-gray-500 mb-3">KEY SKILLS</p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="skill">Solar Inverters</span>
+            <span class="skill">PLC Basics</span>
+            <span class="skill">Safety Protocols</span>
+            <span class="skill">Load Calculation</span>
+          </div>
+
+          <div class="flex gap-3">
+            <button onclick="showSyllabus(2)" class="outline-btn">View Syllabus</button>
+            <button onclick="applyCourse(2)" class="primary-btn">Apply</button>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- COURSE 4 -->
+      <article class="course-card bg-white rounded-xl border overflow-hidden"
+        data-category="technical"
+        data-level="advanced">
+
+        <div class="h-2 bg-secondary"></div>
+
+        <div class="p-6">
+
+          <div class="flex justify-between mb-4">
+            <span class="text-xs font-bold text-secondary bg-orange-50 px-3 py-2 rounded-full">
+              Technical & Vocational
+            </span>
+            <span class="text-xs text-gray-500">4 Months</span>
+          </div>
+
+          <h3 class="text-xl font-bold mb-3">
+            Advanced HVAC & Refrigeration Systems
+          </h3>
+
+          <p class="text-sm text-gray-600 mb-5">
+            Learn industrial cooling principles, inverter compressor
+            troubleshooting, gas charging, and preventive maintenance.
+          </p>
+
+          <div class="bg-gray-50 p-4 rounded-lg text-sm space-y-2 mb-5">
+            <p><strong>Eligibility:</strong> Open Admission</p>
+            <p><strong>Format:</strong> Practical Lab</p>
+          </div>
+
+          <p class="text-xs font-bold text-gray-500 mb-3">KEY SKILLS</p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="skill">Inverter PCB</span>
+            <span class="skill">Gas Recovery</span>
+            <span class="skill">Soldering/Brazing</span>
+            <span class="skill">Diagnostics</span>
+          </div>
+
+          <div class="flex gap-3">
+            <button onclick="showSyllabus(3)" class="outline-btn">View Syllabus</button>
+            <button onclick="applyCourse(3)" class="primary-btn">Apply</button>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- COURSE 5 -->
+      <article class="course-card bg-white rounded-xl border overflow-hidden"
+        data-category="hardware"
+        data-level="intermediate">
+
+        <div class="h-2 bg-primary"></div>
+
+        <div class="p-6">
+
+          <div class="flex justify-between mb-4">
+            <span class="text-xs font-bold text-primary bg-red-50 px-3 py-2 rounded-full">
+              Electrical & Hardware
+            </span>
+            <span class="text-xs text-gray-500">3 Months</span>
+          </div>
+
+          <h3 class="text-xl font-bold mb-3">
+            Mobile Phone Hardware Repair & Diagnostics
+          </h3>
+
+          <p class="text-sm text-gray-600 mb-5">
+            Learn micro-soldering, schematic reading, chip repair,
+            screen replacement, software flashing, and diagnostics.
+          </p>
+
+          <div class="bg-gray-50 p-4 rounded-lg text-sm space-y-2 mb-5">
+            <p><strong>Eligibility:</strong> Open Admission</p>
+            <p><strong>Format:</strong> Benchtop Workshop</p>
+          </div>
+
+          <p class="text-xs font-bold text-gray-500 mb-3">KEY SKILLS</p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="skill">Micro Soldering</span>
+            <span class="skill">Multimeter Tracing</span>
+            <span class="skill">Chip Reballing</span>
+            <span class="skill">OS Flashing</span>
+          </div>
+
+          <div class="flex gap-3">
+            <button onclick="showSyllabus(4)" class="outline-btn">View Syllabus</button>
+            <button onclick="applyCourse(4)" class="primary-btn">Apply</button>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- COURSE 6 -->
+      <article class="course-card bg-white rounded-xl border overflow-hidden"
+        data-category="digital"
+        data-level="beginner">
+
+        <div class="h-2 bg-secondary"></div>
+
+        <div class="p-6">
+
+          <div class="flex justify-between mb-4">
+            <span class="text-xs font-bold text-secondary bg-orange-50 px-3 py-2 rounded-full">
+              Digital Skills & IT
+            </span>
+            <span class="text-xs text-gray-500">3 Months</span>
+          </div>
+
+          <h3 class="text-xl font-bold mb-3">
+            Digital Marketing, SEO & E-Commerce Operations
+          </h3>
+
+          <p class="text-sm text-gray-600 mb-5">
+            Learn digital advertising, search engine optimization,
+            content strategy, and online store management.
+          </p>
+
+          <div class="bg-gray-50 p-4 rounded-lg text-sm space-y-2 mb-5">
+            <p><strong>Eligibility:</strong> Basic Computer Literacy</p>
+            <p><strong>Format:</strong> Lab & Practical</p>
+          </div>
+
+          <p class="text-xs font-bold text-gray-500 mb-3">KEY SKILLS</p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="skill">Meta Ads</span>
+            <span class="skill">Google Analytics</span>
+            <span class="skill">Technical SEO</span>
+            <span class="skill">Shopify Store</span>
+          </div>
+
+          <div class="flex gap-3">
+            <button onclick="showSyllabus(5)" class="outline-btn">View Syllabus</button>
+            <button onclick="applyCourse(5)" class="primary-btn">Apply</button>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- COURSE 7 -->
+      <article class="course-card bg-white rounded-xl border overflow-hidden"
+        data-category="technical"
+        data-level="beginner">
+
+        <div class="h-2 bg-primary"></div>
+
+        <div class="p-6">
+
+          <div class="flex justify-between mb-4">
+            <span class="text-xs font-bold text-primary bg-red-50 px-3 py-2 rounded-full">
+              Technical & Vocational
+            </span>
+            <span class="text-xs text-gray-500">6 Months</span>
+          </div>
+
+          <h3 class="text-xl font-bold mb-3">
+            Culinary Arts & Commercial Food Preparation
+          </h3>
+
+          <p class="text-sm text-gray-600 mb-5">
+            Learn professional kitchen standards, commercial baking,
+            food safety, cost planning, and catering.
+          </p>
+
+          <div class="bg-gray-50 p-4 rounded-lg text-sm space-y-2 mb-5">
+            <p><strong>Eligibility:</strong> Open Admission</p>
+            <p><strong>Format:</strong> Commercial Kitchen</p>
+          </div>
+
+          <p class="text-xs font-bold text-gray-500 mb-3">KEY SKILLS</p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="skill">HACCP Safety</span>
+            <span class="skill">Commercial Baking</span>
+            <span class="skill">Menu Costing</span>
+            <span class="skill">Knife Skills</span>
+          </div>
+
+          <div class="flex gap-3">
+            <button onclick="showSyllabus(6)" class="outline-btn">View Syllabus</button>
+            <button onclick="applyCourse(6)" class="primary-btn">Apply</button>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- COURSE 8 -->
+      <article class="course-card bg-white rounded-xl border overflow-hidden"
+        data-category="business"
+        data-level="beginner">
+
+        <div class="h-2 bg-secondary"></div>
+
+        <div class="p-6">
+
+          <div class="flex justify-between mb-4">
+            <span class="text-xs font-bold text-secondary bg-orange-50 px-3 py-2 rounded-full">
+              Business & Entrepreneurship
+            </span>
+            <span class="text-xs text-gray-500">2 Months</span>
+          </div>
+
+          <h3 class="text-xl font-bold mb-3">
+            Micro-Business Management & Freelance Enterprise
+          </h3>
+
+          <p class="text-sm text-gray-600 mb-5">
+            Learn financial record keeping, client contracts,
+            invoicing, and small business development.
+          </p>
+
+          <div class="bg-gray-50 p-4 rounded-lg text-sm space-y-2 mb-5">
+            <p><strong>Eligibility:</strong> Open Admission</p>
+            <p><strong>Format:</strong> Hybrid Workshop</p>
+          </div>
+
+          <p class="text-xs font-bold text-gray-500 mb-3">KEY SKILLS</p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="skill">Bookkeeping</span>
+            <span class="skill">Client Pitching</span>
+            <span class="skill">Contracts</span>
+            <span class="skill">Micro-Credit</span>
+          </div>
+
+          <div class="flex gap-3">
+            <button onclick="showSyllabus(7)" class="outline-btn">View Syllabus</button>
+            <button onclick="applyCourse(7)" class="primary-btn">Apply</button>
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+
+    <p id="noResults" class="hidden text-center text-gray-500 py-10">
+      No courses found. Try another search or filter.
+    </p>
+
+  </div>
+</section>
+
+<!-- ENROLLMENT PROCESS -->
+<section class="bg-red-50 py-16">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-extrabold text-primary mb-3">
+        Your 4-Step Enrollment Journey
+      </h2>
+
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        From selecting a course to entering our training labs,
+        we support every step of your learning journey.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <div class="bg-white p-6 rounded-xl shadow-sm">
+        <div class="bg-primary text-white w-12 h-12 rounded-lg flex items-center justify-center text-xl font-bold mb-5">1</div>
+        <h3 class="font-bold text-lg mb-3">Select Your Course</h3>
+        <p class="text-sm text-gray-600">
+          Review course details, eligibility requirements, and
+          training duration to choose the right program.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-sm">
+        <div class="bg-secondary text-white w-12 h-12 rounded-lg flex items-center justify-center text-xl font-bold mb-5">2</div>
+        <h3 class="font-bold text-lg mb-3">Submit Registration</h3>
+        <p class="text-sm text-gray-600">
+          Complete the registration form with your personal
+          information and educational details.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-sm">
+        <div class="bg-primary text-white w-12 h-12 rounded-lg flex items-center justify-center text-xl font-bold mb-5">3</div>
+        <h3 class="font-bold text-lg mb-3">Skill Assessment</h3>
+        <p class="text-sm text-gray-600">
+          Meet our academic counselors for guidance and
+          assessment of your training requirements.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-sm">
+        <div class="bg-secondary text-white w-12 h-12 rounded-lg flex items-center justify-center text-xl font-bold mb-5">4</div>
+        <h3 class="font-bold text-lg mb-3">Class Onboarding</h3>
+        <p class="text-sm text-gray-600">
+          Complete enrollment and receive information about
+          your classes, training facilities, and schedule.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT CTA -->
+<section class="py-16">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 md:p-12 text-white flex flex-col md:flex-row justify-between items-center gap-8">
+
+      <div class="max-w-2xl">
+        <span class="bg-white/20 px-4 py-2 rounded-full text-xs font-bold">
+          STUDENT GUIDANCE
+        </span>
+
+        <h2 class="text-3xl font-extrabold mt-5 mb-4">
+          Need Help Choosing the Right Course?
+        </h2>
+
+        <p class="text-white/90 leading-relaxed">
+          Speak with our student counselor to find a training
+          program that matches your interests and career goals.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-3">
+        <a href="contact.html"
+          class="bg-white text-primary px-6 py-4 rounded-lg font-bold hover:bg-gray-100">
+          Contact Student Counselor
+        </a>
+
+        <a href="#catalog"
+          class="border border-white px-6 py-4 rounded-lg font-bold hover:bg-white/10">
+          Explore Courses
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-100 border-t py-12">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="grid md:grid-cols-3 gap-10">
+
+      <div>
+        <h2 class="text-2xl font-extrabold text-primary mb-4">SHED</h2>
+
+        <p class="text-sm text-gray-600 leading-relaxed">
+          Empowering youth and professionals through market-driven
+          technical, industrial, and digital skills for a better future.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-bold text-primary mb-4">Quick Links</h3>
+
+        <ul class="space-y-3 text-sm text-gray-600">
+          <li><a href="index.html" class="hover:text-primary">Home</a></li>
+          <li><a href="about.html" class="hover:text-primary">About Us</a></li>
+          <li><a href="courses.html" class="hover:text-primary">Courses & Training</a></li>
+          <li><a href="contact.html" class="hover:text-primary">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold text-primary mb-4">Contact Information</h3>
+
+        <p class="text-sm text-gray-600 mb-3">
+          Central Vocational Campus
+        </p>
+
+        <p class="text-sm text-gray-600 mb-3">
+          Technical Education Wing
+        </p>
+
+        <p class="text-sm text-gray-600">
+          Helpline: (555) 019-2834
+        </p>
+      </div>
+
+    </div>
+
+    <div class="border-t mt-10 pt-6 text-center text-sm text-gray-500">
+      © 2025 SHED Skills Training Program. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+<!-- SYLLABUS MODAL -->
+<div id="syllabusModal"
+  class="modal fixed inset-0 bg-black/60 z-[100] items-center justify-center p-4">
+
+  <div class="bg-white rounded-xl p-7 max-w-lg w-full relative">
+
+    <button onclick="closeModals()"
+      class="absolute right-5 top-4 text-2xl text-gray-500">
+      ×
+    </button>
+
+    <h2 id="syllabusTitle" class="text-2xl font-bold text-primary mb-4"></h2>
+
+    <p id="syllabusDescription" class="text-gray-600 leading-relaxed"></p>
+
+    <button onclick="closeModals()"
+      class="mt-6 bg-primary text-white px-6 py-3 rounded-lg font-bold">
+      Close
+    </button>
+
+  </div>
+</div>
+
+<!-- APPLICATION MODAL -->
+<div id="applicationModal"
+  class="modal fixed inset-0 bg-black/60 z-[100] items-center justify-center p-4">
+
+  <div class="bg-white rounded-xl p-7 max-w-lg w-full relative max-h-[90vh] overflow-y-auto">
+
+    <button onclick="closeModals()"
+      class="absolute right-5 top-4 text-2xl text-gray-500">
+      ×
+    </button>
+
+    <h2 class="text-2xl font-bold text-primary mb-2">
+      Course Application
+    </h2>
+
+    <p class="text-sm text-gray-500 mb-6">
+      Complete the form to express your interest in a course.
+    </p>
+
+    <form id="applicationForm" class="space-y-4">
+
+      <div>
+        <label class="block text-sm font-semibold mb-2">Full Name</label>
+        <input required type="text" name="name"
+          class="w-full border rounded-lg p-3"
+          placeholder="Enter your full name">
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold mb-2">Email Address</label>
+        <input required type="email" name="email"
+          class="w-full border rounded-lg p-3"
+          placeholder="Enter your email">
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold mb-2">Phone Number</label>
+        <input required type="tel" name="phone"
+          class="w-full border rounded-lg p-3"
+          placeholder="Enter your phone number">
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold mb-2">Select Course</label>
+        <select id="selectedCourse" name="course" required
+          class="w-full border rounded-lg p-3">
+
+          <option value="">Choose a course</option>
+          <option>Full-Stack Web Development</option>
+          <option>Graphic Design & UI/UX</option>
+          <option>Industrial Electrical & Solar Installation</option>
+          <option>Advanced HVAC & Refrigeration</option>
+          <option>Mobile Phone Hardware Repair</option>
+          <option>Digital Marketing & E-Commerce</option>
+          <option>Culinary Arts</option>
+          <option>Micro-Business Management</option>
+
+        </select>
+      </div>
+
+      <button type="submit"
+        class="w-full bg-primary text-white py-3 rounded-lg font-bold hover:bg-red-900">
+        Submit Application
+      </button>
+
+    </form>
+
+    <p id="formMessage" class="text-sm text-green-700 mt-4"></p>
+
+  </div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+
+  const courses = [
+    {
+      title: "Full-Stack Web Development & Modern Coding",
+      description: "This course covers frontend development, backend architecture, React, Node.js, SQL databases, REST APIs, Git, and deployment."
+    },
+    {
+      title: "Graphic Design, UI/UX & Digital Media",
+      description: "Learn visual communication, typography, Figma, Photoshop, user research, wireframing, prototyping, and brand identity."
+    },
+    {
+      title: "Industrial Electrical Technician & Solar Installation",
+      description: "Learn electrical systems, three-phase motor control, solar inverters, photovoltaic installation, PLC basics, and safety protocols."
+    },
+    {
+      title: "Advanced HVAC & Refrigeration Systems",
+      description: "Study industrial cooling systems, inverter compressors, gas recovery, soldering, brazing, and system diagnostics."
+    },
+    {
+      title: "Mobile Phone Hardware Repair & Diagnostics",
+      description: "Learn mobile hardware troubleshooting, micro-soldering, multimeter tracing, chip repair, and OS flashing."
+    },
+    {
+      title: "Digital Marketing, SEO & E-Commerce Operations",
+      description: "Study social media advertising, Meta Ads, Google Analytics, SEO, content strategy, and Shopify store management."
+    },
+    {
+      title: "Culinary Arts & Commercial Food Preparation",
+      description: "Learn professional kitchen practices, food safety, HACCP, commercial baking, menu costing, and catering."
+    },
+    {
+      title: "Micro-Business Management & Freelance Enterprise",
+      description: "Learn bookkeeping, client pitching, contracts, invoicing, financial planning, and micro-business development."
+    }
+  ];
+
+  let activeCategory = "all";
+
+  function filterCategory(category, button) {
+    activeCategory = category;
+
+    document.querySelectorAll(".category-btn").forEach(btn => {
+      btn.classList.remove("bg-primary", "text-white");
+      btn.classList.add("bg-gray-100");
+    });
+
+    button.classList.remove("bg-gray-100");
+    button.classList.add("bg-primary", "text-white");
+
+    filterCourses();
+  }
+
+  function filterCourses() {
+
+    const search = document.getElementById("courseSearch")
+      .value.toLowerCase();
+
+    const level = document.getElementById("courseLevel").value;
+
+    const cards = document.querySelectorAll(".course-card");
+
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+
+      const category = card.dataset.category;
+      const cardLevel = card.dataset.level;
+      const content = card.innerText.toLowerCase();
+
+      const matchesCategory =
+        activeCategory === "all" || category === activeCategory;
+
+      const matchesSearch = content.includes(search);
+
+      const matchesLevel =
+        level === "all" || cardLevel === level;
+
+      if (matchesCategory && matchesSearch && matchesLevel) {
+        card.style.display = "block";
+        visibleCount++;
+      } else {
+        card.style.display = "none";
+      }
+
+    });
+
+    document.getElementById("noResults").classList.toggle(
+      "hidden", visibleCount !== 0
+    );
+  }
+
+  function showSyllabus(index) {
+
+    document.getElementById("syllabusTitle").innerText =
+      courses[index].title;
+
+    document.getElementById("syllabusDescription").innerText =
+      courses[index].description;
+
+    document.getElementById("syllabusModal").classList.add("active");
+  }
+
+  function applyCourse(index) {
+
+    const courseNames = [
+      "Full-Stack Web Development",
+      "Graphic Design & UI/UX",
+      "Industrial Electrical & Solar Installation",
+      "Advanced HVAC & Refrigeration",
+      "Mobile Phone Hardware Repair",
+      "Digital Marketing & E-Commerce",
+      "Culinary Arts",
+      "Micro-Business Management"
+    ];
+
+    document.getElementById("selectedCourse").value =
+      courseNames[index];
+
+    document.getElementById("applicationModal").classList.add("active");
+  }
+
+  function closeModals() {
+    document.querySelectorAll(".modal").forEach(modal => {
+      modal.classList.remove("active");
+    });
+  }
+
+  document.querySelectorAll(".modal").forEach(modal => {
+    modal.addEventListener("click", function(event) {
+      if (event.target === modal) {
+        closeModals();
+      }
+    });
+  });
+
+  document.getElementById("applicationForm")
+    .addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      document.getElementById("formMessage").innerText =
+        "Thank you! Your application details have been entered. Please connect this form to a backend to receive real registrations.";
+
+      this.reset();
+
+    });
+
+</script>
+
+</body>
+</html>
